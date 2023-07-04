@@ -50,6 +50,13 @@ client.on('message', message =>{
   }
 });
 
+client.on('message', (message) => {
+    if (message.content.includes('twitter.com')) {
+        const newContent = message.content.replace('twitter.com', 'vxtwitter.com');
+        message.channel.send(newContent);
+    }
+});
+
 if(process.env.DISCORD_BOT_TOKEN == undefined){
  console.log('DISCORD_BOT_TOKENが設定されていません。');
  process.exit(0);
