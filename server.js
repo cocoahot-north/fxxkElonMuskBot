@@ -37,26 +37,22 @@ client.on("ready", (message) => {
 });
 
 client.on("message", (message) => {
+    console.log(`Message received: ${message.content}`);
   if (message.author.id == client.user.id || message.author.bot) {
     return;
   }
-  if (message.isMemberMentioned(client.user)) {
-    sendReply(message, "呼びましたか？");
-    return;
-  }
+
   if (message.content.match(/にゃ～ん|にゃーん/)) {
     let text = "にゃ～ん";
     sendMsg(message.channel.id, text);
     return;
   }
-});
-
-client.on("message", (message) => {
   if (message.content.includes("twitter.com")) {
     const newContent = message.content.replace("twitter.com", "vxtwitter.com");
     message.channel.send(newContent);
   }
 });
+
 
 if (process.env.DISCORD_BOT_TOKEN == undefined) {
   console.log("DISCORD_BOT_TOKENが設定されていません。");
