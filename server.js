@@ -42,11 +42,6 @@ client.on("message", (message) => {
     return;
   }
 
-  if (message.content.match(/にゃ～ん|にゃーん/)) {
-    let text = "にゃ～ん";
-    sendMsg(message.channel.id, text);
-    return;
-  }
   if (message.content.includes("twitter.com")) {
     const newContent = message.content.replace("twitter.com", "vxtwitter.com");
     message.channel.send(newContent);
