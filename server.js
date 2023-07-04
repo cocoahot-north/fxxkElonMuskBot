@@ -42,7 +42,7 @@ client.on("message", (message) => {
     return;
   }
 
-  if (message.content.includes("twitter.com")) {
+  if (message.content.includes("twitter.com/")) {
     const newContent = message.content.replace("twitter.com", "vxtwitter.com");
     message.channel.send(newContent);
   }
